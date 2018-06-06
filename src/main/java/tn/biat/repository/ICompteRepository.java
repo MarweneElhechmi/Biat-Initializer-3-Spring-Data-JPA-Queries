@@ -26,6 +26,7 @@ public interface ICompteRepository extends JpaRepository<Compte,String>{
 	List<Compte> findBySoldeInferieurA(BigDecimal valeur);
 	
 	@Query("select c from Compte c where c.proprietaire like :x")
+	// Ou bien @Query("select c from Compte c where c.proprietaire like %?1%")
 	List<Compte> findByProprietaireComme(@Param("x") String pattern);
 	
 //	@Override
